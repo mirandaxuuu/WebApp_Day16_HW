@@ -3,15 +3,14 @@ const app = express();
 const ejs = require('ejs');
 const bodyParser = require('body-parser');
 const request = require('request');
-const accessKey = 'ACCESS KEY';
+const accessKey = '008b882bc469731393a0753a43a30769';
 
-app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res){
-	res.render('index');
+	res.render('index', {answer: null, error: null});
 })
 
 
